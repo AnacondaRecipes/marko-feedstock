@@ -12,6 +12,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   entry_points:
     - marko=marko.cli:main
@@ -40,7 +41,7 @@ test:
     - pytest
 
 about:
-  home: https://pypi.org/project/marko/
+  home: https://github.com/frostming/marko
   dev_url: https://github.com/frostming/marko/
   doc_url: https://marko-py.readthedocs.io/
   summary: A markdown parser with high extensibility.
