@@ -24,8 +24,6 @@ requirements:
     - pdm-pep517
   run:
     - python
-    - python-slugify
-    - pygments
 
 test:
   source_files:
@@ -35,7 +33,7 @@ test:
   commands:
     - pip check
     - marko --help
-    - pytest -vv tests
+    - pytest -vv tests -k "not (TestToc or TestCodeHilite or test_extension_use)"
   requires:
     - pip
     - pytest
