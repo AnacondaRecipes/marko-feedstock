@@ -11,8 +11,6 @@ source:
 
 build:
   number: 0
-  # osx-64 is outside the current build-target scope.
-  skip: true  # [py<39 or (osx and x86_64)]
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   entry_points:
     - marko=marko.cli:main
@@ -24,7 +22,6 @@ requirements:
     - pdm-backend
   run:
     - python
-  # toc, codehilite and repr extras are unbounded; soft constraints would be no-ops.
 
 test:
   source_files:
